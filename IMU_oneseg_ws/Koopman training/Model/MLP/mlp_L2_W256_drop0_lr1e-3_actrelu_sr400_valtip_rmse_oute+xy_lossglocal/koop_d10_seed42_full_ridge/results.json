@@ -1,0 +1,144 @@
+{
+  "nn_rel": "MLP/mlp_L2_W256_drop0_lr1e-3_actrelu_sr400_valtip_rmse_oute+xy_lossglocal",
+  "nn_run_id": "mlp_L2_W256_drop0_lr1e-3_actrelu_sr400_valtip_rmse_oute+xy_lossglocal",
+  "nn_ckpt": "/root/DataCollection/IMU_oneseg_ws/NN training/Training/models/MLP/mlp_L2_W256_drop0_lr1e-3_actrelu_sr400_valtip_rmse_oute+xy_lossglocal/model.pt",
+  "nn_config": {
+    "arch": "MLP",
+    "shape_option": "e",
+    "plane": "xz",
+    "use_trq": false,
+    "imu": "imu12",
+    "cmd": "u",
+    "in_dim": 16,
+    "out_dim": 16,
+    "loss_id": "glocal",
+    "layers": 2,
+    "width": 256,
+    "sample_rate_hz": 400.0
+  },
+  "nn_input_key": "enc_imu12_u",
+  "nn_imu_frame": "IMU3_aligned",
+  "koopman_x_mode": "full",
+  "feature_names": [
+    "pF_RB2_x",
+    "pF_RB2_z",
+    "pF_RB3_x",
+    "pF_RB3_z",
+    "pF_RB4_x",
+    "pF_RB4_z",
+    "pF_RB5_x",
+    "pF_RB5_z",
+    "pB_RB2_in_RB1_x",
+    "pB_RB2_in_RB1_z",
+    "pB_RB3_in_RB1_x",
+    "pB_RB3_in_RB1_z",
+    "pB_RB4_in_RB1_x",
+    "pB_RB4_in_RB1_z",
+    "pB_RB5_in_RB1_x",
+    "pB_RB5_in_RB1_z"
+  ],
+  "delay": 10,
+  "seed": 42,
+  "k0": 1891640,
+  "num_predict": 4000,
+  "sample_rate_hz": 400.0,
+  "native_sample_rate_hz": 400.0,
+  "koopman_stride": 1,
+  "koopman_train_hz": 400.0,
+  "source": "nn",
+  "u_kind": "enc_rel",
+  "n_u": 3,
+  "one_step_rmse": 4.405377222611339e-05,
+  "one_step_rmse_norm": 0.0009782416929545415,
+  "rollout_rmse_last": 0.05069000060010382,
+  "rollout_rmse_vs_gt_mean": 0.030679614928853034,
+  "rollout_plane_rmse_vs_gt_mean": 0.03531216876695582,
+  "rollout_plane_rmse_vs_nn_mean": 0.034521596170030776,
+  "shape_mean_rmse_vs_nn_m": 0.038128619085814094,
+  "shape_mean_rmse_vs_gt_m": 0.03909738227894518,
+  "shape_panels": [
+    {
+      "title": "RB2 global (pF)",
+      "rmse_vs_nn_m": 0.0056375413867336506,
+      "rmse_vs_gt_m": 0.005825774817486542,
+      "rmse_ot_vs_gt_m": 0.0027999909970685397
+    },
+    {
+      "title": "RB3 global (pF)",
+      "rmse_vs_nn_m": 0.02170825944477775,
+      "rmse_vs_gt_m": 0.02233921889589153,
+      "rmse_ot_vs_gt_m": 0.00985445672536717
+    },
+    {
+      "title": "RB4 global (pF)",
+      "rmse_vs_nn_m": 0.047135305497821106,
+      "rmse_vs_gt_m": 0.048156094047315245,
+      "rmse_ot_vs_gt_m": 0.02017053567251118
+    },
+    {
+      "title": "RB5 global (pF)",
+      "rmse_vs_nn_m": 0.07804405484042724,
+      "rmse_vs_gt_m": 0.08009647812304785,
+      "rmse_ot_vs_gt_m": 0.0334057737320592
+    },
+    {
+      "title": "RB2 local in RB1 (pB)",
+      "rmse_vs_nn_m": 0.005562097113179729,
+      "rmse_vs_gt_m": 0.0057802133522121555,
+      "rmse_ot_vs_gt_m": 0.0027999909970685397
+    },
+    {
+      "title": "RB3 local in RB1 (pB)",
+      "rmse_vs_nn_m": 0.02177536828989066,
+      "rmse_vs_gt_m": 0.022327966953867108,
+      "rmse_ot_vs_gt_m": 0.00985445672536717
+    },
+    {
+      "title": "RB4 local in RB1 (pB)",
+      "rmse_vs_nn_m": 0.04705640303742313,
+      "rmse_vs_gt_m": 0.048153187715784196,
+      "rmse_ot_vs_gt_m": 0.02017053567251118
+    },
+    {
+      "title": "RB5 local in RB1 (pB)",
+      "rmse_vs_nn_m": 0.07810992307625952,
+      "rmse_vs_gt_m": 0.08010012432595681,
+      "rmse_ot_vs_gt_m": 0.0334057737320592
+    }
+  ],
+  "n_train_pairs": 1883143,
+  "n_val_pairs": 99112,
+  "csv": [
+    "/root/DataCollection/IMU_oneseg_ws/data_20260825_192414.csv"
+  ],
+  "delta_u_handle": 1,
+  "x_norm": 2,
+  "u_norm": 1,
+  "ridge_alpha": 0.1,
+  "mode_reg": 2,
+  "ident": "ridge",
+  "skip_start_freeze": true,
+  "n_skip_start": 2000,
+  "warmup": 0,
+  "compare_optitrack_koopman": true,
+  "optitrack_hz": 100.0,
+  "optitrack_stride": 4,
+  "out_dir": "/root/DataCollection/IMU_oneseg_ws/Koopman training/Model/MLP/mlp_L2_W256_drop0_lr1e-3_actrelu_sr400_valtip_rmse_oute+xy_lossglocal/koop_d10_seed42_full_ridge",
+  "plane": "xz",
+  "tip_rb": 5,
+  "rollout_tip_rmse_vs_gt_mean": 0.07185620082874118,
+  "rollout_tip_rmse_vs_nn_mean": 0.07015969236251561,
+  "optitrack_koopman": {
+    "one_step_rmse": 0.00012776830825884537,
+    "one_step_rmse_norm": 0.0038826706496184506,
+    "n_train_pairs": 470777,
+    "n_val_pairs": 24777,
+    "sample_rate_hz": 100.0,
+    "stride": 4,
+    "k0": 472910,
+    "num_predict": 1000,
+    "rollout_rmse_vs_gt_mean": 0.013067866096404092,
+    "shape_mean_rmse_vs_gt_m": 0.016557689281751522,
+    "npz": "koopman_model_optitrack.npz"
+  }
+}
